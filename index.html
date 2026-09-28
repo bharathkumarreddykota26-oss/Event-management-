@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Event Supply Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="brand">🎪 Event Supply Hub</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#products">Products</a>
+    <a href="#orders">My Orders</a>
+    <button id="loginBtn" class="outline">Login</button>
+    <button id="logoutBtn" class="outline hidden">Logout</button>
+  </nav>
+</header>
+
+<main>
+  <section id="home" class="hero">
+    <div>
+      <p class="eyebrow">EVENT MATERIALS + CATERING</p>
+      <h1>Everything your event needs, in one place.</h1>
+      <p>Book chairs, tables, tents, sound systems and food for your next event.</p>
+      <a href="#products" class="primary">Browse Products</a>
+    </div>
+  </section>
+
+  <section id="products" class="section">
+    <div class="section-head">
+      <div><p class="eyebrow">CATALOG</p><h2>Materials & Food</h2></div>
+      <div class="filters">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="material">Materials</button>
+        <button class="filter" data-filter="marriage">💍 Marriage</button>
+        <button class="filter" data-filter="food">🍽️ Food</button>
+      </div>
+    </div>
+    <div id="productsGrid" class="grid"></div>
+  </section>
+
+  <section class="section order-builder">
+    <div>
+      <p class="eyebrow">YOUR EVENT</p>
+      <h2>Build your order</h2>
+      <p class="muted">Select products, then provide the event details.</p>
+      <form id="orderForm">
+        <input id="eventName" placeholder="Event name" required>
+        <input id="eventDate" type="date" required>
+        <input id="guests" type="number" min="1" placeholder="Number of guests" required>
+        <textarea id="address" placeholder="Event address" required></textarea>
+        <button class="primary" type="submit">Place Order</button>
+      </form>
+    </div>
+    <aside class="cart">
+      <h3>🛒 Cart</h3>
+      <div id="cart"></div>
+      <div class="cart-total">Total <strong>₹<span id="total">0</span></strong></div>
+    </aside>
+  </section>
+
+  <section id="orders" class="section">
+    <p class="eyebrow">ACCOUNT</p>
+    <h2>My Orders</h2>
+    <div id="myOrders" class="orders-list"><p class="muted">Login to see your orders.</p></div>
+  </section>
+</main>
+
+<div id="authModal" class="modal hidden">
+  <div class="modal-card">
+    <button class="close" id="closeAuth">×</button>
+    <div class="tabs">
+      <button id="loginTab" class="tab active">Login</button>
+      <button id="registerTab" class="tab">Create account</button>
+    </div>
+    <form id="authForm">
+      <input id="authName" placeholder="Full name" class="hidden">
+      <input id="authEmail" type="email" placeholder="Email" required>
+      <input id="authPassword" type="password" placeholder="Password" required>
+      <button class="primary" id="authSubmit">Login</button>
+      <p id="authMessage" class="message"></p>
+    </form>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

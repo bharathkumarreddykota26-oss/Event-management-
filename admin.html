@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin Dashboard — Event Supply Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-body">
+<header>
+  <div class="brand">🎪 Event Supply Hub — Admin</div>
+  <nav><a href="/">Customer Site</a><button class="outline" id="adminLogout">Logout</button></nav>
+</header>
+<main class="admin-wrap">
+  <p class="eyebrow">ADMINISTRATION</p>
+  <h1>Dashboard</h1>
+  <div id="stats" class="stats"></div>
+  <h2>Orders</h2>
+  <div class="table-wrap">
+    <table class="admin-table">
+      <thead><tr><th>Order</th><th>Customer</th><th>Event</th><th>Date</th><th>Guests</th><th>Total</th><th>Status</th></tr></thead>
+      <tbody id="ordersTable"></tbody>
+    </table>
+  </div>
+</main>
+<script src="admin.js"></script>
+</body>
+</html>
